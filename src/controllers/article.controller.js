@@ -2,13 +2,6 @@ import Article from "../models/article.model.js";
 
 export const getArticles = async (req, res) => {
     try {
-
-        const { role } = req;
-
-        if (role !== "admin") {
-            return res.status(401).json({ message: "Unauthorized" });
-        }
-
         const articles = await Article.find();
 
         res.status(200).json(articles);
