@@ -7,9 +7,9 @@ import cors from "cors";
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 app.use(userRoutes);
 app.use(articleRoutes);
 app.use(clientRoutes);
-app.use(cors());
 
 export default app;
